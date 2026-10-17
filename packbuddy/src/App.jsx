@@ -1,12 +1,11 @@
-
 import './App.css'
 
 import { Routes, Route, Link } from 'react-router-dom'
-
 import PackingCalculator from './features/PackingCalculator'
 import DormRoomFit from './features/DormRoomFit'
 import PackOrBuy from './features/PackOrBuy'
 import TransportPlanner from './features/TransportPlanner'
+import MoveTracker from './features/MoveTracker'
 
 const features = [
   {
@@ -15,7 +14,7 @@ const features = [
     description:
       'Estimate your luggage weight and figure out what you can bring.',
     link: 'Start packing',
-    path: '/packing',
+    path: '/packingcalculator',
   },
   {
     icon: '📐',
@@ -41,6 +40,14 @@ const features = [
     link: 'Plan transport',
     path: '/transport',
   },
+  {
+  icon: '📦',
+  title: 'Move-In & Move-Out Tracker',
+  description:
+    'Organise moving tasks, track deadlines, and stay on top of your accommodation checklist.',
+  link: 'Track your move',
+  path: '/move-tracker',
+},
 ]
 
 function HomePage() {
@@ -65,12 +72,9 @@ function HomePage() {
           </p>
 
           <div className="hero-actions">
-            <Link className="primary-button" to="/packing">
+            <a className="primary-button hero-primary-button" href="#features">
               Plan my move <span>→</span>
-            </Link>
-            <Link className="secondary-button" to="/#how-it-works">
-              See how it works
-            </Link>
+            </a>
           </div>
 
           <div className="hero-note">
@@ -80,26 +84,15 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="visual-circle"></div>
-          <div className="suitcase">🧳</div>
+        
+<div className="hero-visual">
+  <img
+    src="/collage.png"
+    alt="Packing collage"
+    className="hero-photo"
+  />
+</div>
 
-          <div className="floating-card top-card">
-            <span>✈️</span>
-            <div>
-              <strong>New destination</strong>
-              <small>New beginnings await</small>
-            </div>
-          </div>
-
-          <div className="floating-card bottom-card">
-            <span>✓</span>
-            <div>
-              <strong>Move-in ready</strong>
-              <small>Your move, organised</small>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section className="features" id="features">
@@ -111,34 +104,21 @@ function HomePage() {
           </p>
         </div>
 
-        <div className="feature-grid">
-          {features.map((feature) => (
-            <article className="feature-card" key={feature.path}>
-              <div className="feature-icon">{feature.icon}</div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+                <div className="feature-grid">
+  {features.map((feature) => (
+    <article className="feature-card" key={feature.path}>
+      <div className="feature-icon">{feature.icon}</div>
 
-              <Link
-                className="feature-card-action"
-                to={feature.path}
-              >
-                {feature.link} <span>→</span>
-              </Link>
-            </article>
-          ))}
-        </div>
-      </section>
+      <h3>{feature.title}</h3>
 
-      <section className="how-it-works" id="how-it-works">
-        <span className="eyebrow">A FRESH START, SIMPLIFIED</span>
-        <h2>Your journey starts with a plan.</h2>
-        <p>
-          Make confident decisions about your luggage, your budget,
-          and your new space — before you even leave home.
-        </p>
-        <Link className="primary-button" to="/#features">
-          Explore your tools →
-        </Link>
+      <p>{feature.description}</p>
+
+      <Link className="feature-card-action" to={feature.path}>
+        {feature.link} <span>→</span>
+      </Link>
+    </article>
+  ))}
+</div>
       </section>
     </>
   )
@@ -149,31 +129,38 @@ function App() {
     <div className="app">
       <nav className="navbar">
         <Link className="logo" to="/">
-          <span className="logo-icon">↗</span>
-          PackBuddy
+          <img
+            src="/packbuddylogo.png"
+            alt="PackBuddy logo"
+            className="navbar-logo"
+          />
+          <span>PackBuddy</span>
         </Link>
 
         <div className="nav-links">
-          <Link to="/#features">Features</Link>
-          <Link to="/#how-it-works">How it works</Link>
-          <Link className="nav-button" to="/#features">
+          <a className="nav-button" href="/#features">
             Get started →
-          </Link>
+          </a>
         </div>
       </nav>
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/packing" element={<PackingCalculator />} />
+        <Route path="/packingcalculator" element={<PackingCalculator />} />
         <Route path="/dorm-fit" element={<DormRoomFit />} />
         <Route path="/pack-or-buy" element={<PackOrBuy />} />
         <Route path="/transport" element={<TransportPlanner />} />
+        <Route path="/move-tracker" element={<MoveTracker />} />
       </Routes>
 
       <footer>
         <Link className="logo" to="/">
-          <span className="logo-icon">↗</span>
-          PackBuddy
+          <img
+            src="/packbuddylogo.png"
+            alt=""
+            className="navbar-logo"
+          />
+          <span>PackBuddy</span>
         </Link>
         <p>Pack smarter. Move easier. Spend less.</p>
       </footer>

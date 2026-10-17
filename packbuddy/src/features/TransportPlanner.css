@@ -1,0 +1,708 @@
+/* =============================================================
+   PackBuddy Transport Planner – styles
+   All styles are scoped to .packbuddy
+   ============================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ---------- COLOURS ---------- */
+.packbuddy {
+  --pb-red: #7a1f2b;
+  --pb-red-dark: #561520;
+  --pb-red-soft: #f2dfe0;
+  --pb-beige: #f4ebdd;
+  --pb-beige-deep: #e8d9c2;
+  --pb-cream: #fffaf2;
+  --pb-ink: #2b1d1a;
+  --pb-muted: #6e5d55;
+  --pb-green: #2f6b3f;
+  --pb-green-soft: #e1efe4;
+  --pb-amber: #a86a12;
+  --pb-amber-soft: #f6ead2;
+  --pb-grey-soft: #ece6df;
+  --pb-radius: 14px;
+
+  font-family: 'Poppins', sans-serif;
+  background: var(--pb-beige);
+  color: var(--pb-ink);
+  line-height: 1.7;
+}
+
+.packbuddy *,
+.packbuddy *::before,
+.packbuddy *::after {
+  box-sizing: border-box;
+}
+
+.packbuddy h1,
+.packbuddy h2,
+.packbuddy h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.packbuddy p {
+  margin: 0;
+}
+
+.packbuddy a {
+  color: var(--pb-red);
+}
+
+.packbuddy fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.packbuddy .pb-container {
+  width: min(1100px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.packbuddy .pb-section {
+  padding: 64px 0;
+}
+
+.packbuddy .pb-section-alt {
+  background: var(--pb-beige-deep);
+}
+
+.packbuddy .pb-section-title {
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  color: var(--pb-red);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.packbuddy .pb-section-intro {
+  color: var(--pb-muted);
+  max-width: 660px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.packbuddy .pb-step-label {
+  display: inline-block;
+  background: var(--pb-red);
+  color: var(--pb-cream);
+  font-weight: 600;
+  font-size: .8rem;
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+  letter-spacing: .04em;
+}
+
+.packbuddy .pb-hint {
+  font-size: .8rem;
+  color: var(--pb-muted);
+}
+
+/* ---------- Hero ---------- */
+.packbuddy .pb-hero {
+  background: linear-gradient(160deg, var(--pb-red), var(--pb-red-dark));
+  color: var(--pb-cream);
+  padding: 80px 0 90px;
+  text-align: center;
+}
+
+.packbuddy .pb-hero h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--pb-cream);
+  text-align: center;
+}
+
+.packbuddy .pb-hero h2,
+.packbuddy .pb-hero h3 {
+  color: var(--pb-cream);
+}
+
+.packbuddy .pb-hero p {
+  font-size: 1rem;
+  max-width: 650px;
+  margin: 18px auto 28px;
+  color: var(--pb-cream);
+  opacity: .95;
+  text-align: center;
+}
+
+.packbuddy .pb-steps-preview {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+
+.packbuddy .pb-steps-preview div {
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: .92rem;
+}
+
+/* ---------- Buttons ---------- */
+.packbuddy .pb-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 0;
+  font: 600 1rem 'Poppins', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.packbuddy .pb-btn:hover {
+  transform: translateY(-1px);
+}
+
+.packbuddy .pb-btn-light {
+  background: var(--pb-cream);
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-btn-red {
+  background: var(--pb-red);
+  color: var(--pb-cream);
+}
+
+.packbuddy .pb-btn-red:hover {
+  background: var(--pb-red-dark);
+}
+
+.packbuddy .pb-btn-small {
+  padding: 8px 14px;
+  font-size: .88rem;
+}
+
+.packbuddy .pb-btn-outline {
+  background: transparent;
+  border: 2px solid var(--pb-red);
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-btn-outline:hover {
+  background: var(--pb-red-soft);
+}
+
+/* ---------- Form panels ---------- */
+.packbuddy .pb-panel {
+  background: var(--pb-cream);
+  border: 1px solid var(--pb-beige-deep);
+  border-radius: var(--pb-radius);
+  padding: 28px;
+}
+
+.packbuddy .pb-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.packbuddy legend {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--pb-red);
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.packbuddy label {
+  display: block;
+  font-size: .88rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.packbuddy .pb-field {
+  margin-bottom: 12px;
+}
+
+.packbuddy .pb-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.packbuddy input,
+.packbuddy select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--pb-beige-deep);
+  background: #fff;
+  font: 400 1rem 'Poppins', sans-serif;
+  color: var(--pb-ink);
+}
+
+.packbuddy input:focus,
+.packbuddy select:focus {
+  outline: 2px solid var(--pb-red);
+  border-color: var(--pb-red);
+}
+
+.packbuddy .pb-volume-box {
+  background: var(--pb-red-soft);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: .92rem;
+  margin-top: 6px;
+}
+
+.packbuddy .pb-volume-box strong {
+  color: var(--pb-red);
+  font-size: 1.2rem;
+}
+
+.packbuddy .pb-gps-status {
+  font-size: .85rem;
+  margin-top: 6px;
+  min-height: 1.2em;
+}
+
+.packbuddy .pb-gps-status.ok {
+  color: var(--pb-green);
+}
+
+.packbuddy .pb-gps-status.err {
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-form-actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Search suggestions ---------- */
+.packbuddy .pb-autocomplete {
+  position: relative;
+}
+
+.packbuddy .pb-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border: 1px solid var(--pb-beige-deep);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 10px 24px rgba(43, 29, 26, .15);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.packbuddy .pb-suggestions li {
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: .9rem;
+  border-bottom: 1px solid var(--pb-beige);
+  display: flex;
+  gap: 8px;
+}
+
+.packbuddy .pb-suggestions li:last-child {
+  border-bottom: 0;
+}
+
+.packbuddy .pb-suggestions li:hover,
+.packbuddy .pb-suggestions li.active {
+  background: var(--pb-red-soft);
+}
+
+.packbuddy .pb-s-icon {
+  flex-shrink: 0;
+}
+
+.packbuddy .pb-s-main {
+  font-weight: 500;
+}
+
+.packbuddy .pb-s-sub {
+  display: block;
+  font-size: .78rem;
+  color: var(--pb-muted);
+}
+
+.packbuddy .pb-suggestions .pb-s-group {
+  padding: 6px 12px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--pb-muted);
+  background: var(--pb-beige);
+  cursor: default;
+}
+
+.packbuddy .pb-suggestions .pb-s-group:hover {
+  background: var(--pb-beige);
+}
+
+.packbuddy .pb-line {
+  white-space: nowrap;
+  margin-right: 6px;
+}
+
+.packbuddy .pb-line-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+/* ---------- Coloured tags ---------- */
+.packbuddy .pb-tag {
+  font-size: .75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.packbuddy .pb-tag.good {
+  background: var(--pb-green-soft);
+  color: var(--pb-green);
+}
+
+.packbuddy .pb-tag.warn {
+  background: var(--pb-amber-soft);
+  color: var(--pb-amber);
+}
+
+.packbuddy .pb-tag.bad {
+  background: var(--pb-red-soft);
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-fare-note {
+  display: block;
+  font-size: .76rem;
+  color: var(--pb-muted);
+}
+
+/* ---------- Route summary ---------- */
+.packbuddy .pb-route-summary {
+  margin-top: 22px;
+  background: #fff;
+  border: 2px solid var(--pb-red);
+  border-radius: var(--pb-radius);
+  padding: 18px 20px;
+}
+
+.packbuddy .pb-rs-loading {
+  color: var(--pb-muted);
+  font-size: .92rem;
+}
+
+.packbuddy .pb-rs-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.packbuddy .pb-rs-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-rs-meta {
+  font-size: .85rem;
+  color: var(--pb-muted);
+}
+
+.packbuddy .pb-rs-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.packbuddy .pb-rs-pick {
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: var(--pb-beige);
+}
+
+.packbuddy .pb-rs-pick.cheap {
+  background: var(--pb-green-soft);
+}
+
+.packbuddy .pb-rs-pick.fast {
+  background: var(--pb-amber-soft);
+}
+
+.packbuddy .pb-rs-pick.bags {
+  background: var(--pb-red-soft);
+}
+
+.packbuddy .pb-rs-label {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--pb-muted);
+}
+
+.packbuddy .pb-rs-name {
+  font-weight: 600;
+  margin: 2px 0;
+}
+
+.packbuddy .pb-rs-nums {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.25rem;
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-rs-nums span {
+  font-family: 'Poppins', sans-serif;
+  font-size: .82rem;
+  color: var(--pb-muted);
+  margin-left: 6px;
+}
+
+.packbuddy .pb-rs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--pb-beige-deep);
+}
+
+.packbuddy .pb-rs-list li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--pb-beige-deep);
+  font-size: .9rem;
+  align-items: center;
+}
+
+.packbuddy .pb-rs-list li:last-child {
+  border-bottom: 0;
+}
+
+.packbuddy .pb-rs-time {
+  color: var(--pb-muted);
+  white-space: nowrap;
+}
+
+.packbuddy .pb-rs-price {
+  font-weight: 600;
+  color: var(--pb-red);
+  white-space: nowrap;
+  min-width: 70px;
+  text-align: right;
+}
+
+.packbuddy .pb-rs-off {
+  color: var(--pb-muted);
+}
+
+.packbuddy .pb-rs-foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* ---------- Detailed journey estimates ---------- */
+.packbuddy .pb-estimate-panel {
+  margin-top: 22px;
+}
+
+.packbuddy .pb-estimate-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.packbuddy .pb-estimate-head h3 {
+  color: var(--pb-red);
+  font-size: 1.3rem;
+}
+
+.packbuddy .pb-estimate-stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.packbuddy .pb-stat {
+  background: var(--pb-red-soft);
+  border-radius: 10px;
+  padding: 8px 14px;
+  text-align: center;
+  min-width: 110px;
+}
+
+.packbuddy .pb-stat strong {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.35rem;
+  color: var(--pb-red);
+  line-height: 1.3;
+}
+
+.packbuddy .pb-stat span {
+  font-size: .78rem;
+  color: var(--pb-muted);
+}
+
+/* ---------- Tables ---------- */
+.packbuddy .pb-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--pb-radius);
+  border: 1px solid var(--pb-beige-deep);
+}
+
+.packbuddy table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--pb-cream);
+}
+
+.packbuddy .pb-boot-table {
+  min-width: 760px;
+}
+
+.packbuddy .pb-estimate-table {
+  min-width: 680px;
+}
+
+.packbuddy th,
+.packbuddy td {
+  text-align: left;
+  padding: 13px 15px;
+  border-bottom: 1px solid var(--pb-beige-deep);
+  font-size: .92rem;
+  vertical-align: middle;
+}
+
+.packbuddy th {
+  background: var(--pb-red);
+  color: var(--pb-cream);
+  font-weight: 600;
+}
+
+.packbuddy tr:last-child td {
+  border-bottom: 0;
+}
+
+.packbuddy .pb-estimate-table td strong {
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-estimate-table tr.fastest td:first-child strong::after {
+  content: ' ⚡ fastest';
+  font-size: .75rem;
+  color: var(--pb-amber);
+  font-weight: 600;
+}
+
+.packbuddy .pb-estimate-table tr.cheapest td:first-child strong::after {
+  content: ' 💷 cheapest';
+  font-size: .75rem;
+  color: var(--pb-green);
+  font-weight: 600;
+}
+
+.packbuddy .pb-estimate-table tr.unavailable td {
+  color: var(--pb-muted);
+}
+
+.packbuddy .pb-num {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  color: var(--pb-red);
+}
+
+.packbuddy .pb-suitcases {
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+/* ---------- How it works ---------- */
+.packbuddy .pb-how-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.packbuddy .pb-how-card {
+  background: var(--pb-cream);
+  border: 1px solid var(--pb-beige-deep);
+  border-radius: var(--pb-radius);
+  padding: 22px;
+}
+
+.packbuddy .pb-how-card h3 {
+  color: var(--pb-red);
+  font-size: 1.1rem;
+  margin: 6px 0;
+}
+
+.packbuddy .pb-how-card p {
+  color: var(--pb-muted);
+  font-size: .92rem;
+}
+
+/* ---------- Phone and tablet layouts ---------- */
+@media (max-width: 900px) {
+  .packbuddy .pb-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .packbuddy .pb-section {
+    padding: 48px 0;
+  }
+
+  .packbuddy .pb-hero {
+    padding: 60px 0 68px;
+  }
+
+  .packbuddy .pb-panel {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .packbuddy .pb-rs-list li {
+    grid-template-columns: 1fr auto;
+  }
+
+  .packbuddy .pb-rs-time {
+    grid-column: 1;
+    font-size: .8rem;
+  }
+
+  .packbuddy .pb-hero h1 {
+    font-size: 2rem;
+  }
+}
