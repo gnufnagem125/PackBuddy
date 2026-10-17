@@ -5,7 +5,7 @@
    the tracker and can't change the rest of your website.
    ============================================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap");
 
 /* ---------- COLOURS – change these to restyle the tracker ---------- */
 .movebuddy {
@@ -559,4 +559,95 @@
   .movebuddy .mb-card {
     max-width: 100%;
   }
+}
+
+/* ---------- Calculator/tracker heading alignment ---------- */
+.movebuddy h1,
+.movebuddy h2,
+.movebuddy h3,
+.movebuddy h4,
+.move-tracker-page h1,
+.move-tracker-page h2,
+.move-tracker-page h3,
+.move-tracker-page h4 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  transform: none;
+}
+
+/* Flex section headers need a full-width heading to center within the card. */
+.movebuddy .mb-part-head h2,
+.movebuddy .mb-part-head h3,
+.movebuddy .mb-section-header h2,
+.movebuddy .mb-section-header h3 {
+  flex: 1 1 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.move-tracker-page .move-tracker-header {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.move-tracker-page .move-tracker-header h1,
+.move-tracker-page .move-tracker-header h2,
+.move-tracker-page .move-tracker-header h3,
+.move-tracker-page .move-tracker-header p,
+.move-tracker-page .move-tracker-card h2,
+.move-tracker-page .move-tracker-card h3,
+.move-tracker-page .move-tracker-card h4 {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Final heading placement and hero contrast overrides */
+.movebuddy .mb-hero h1,
+.movebuddy .mb-hero h2,
+.movebuddy .mb-hero h3,
+.movebuddy .mb-hero h4 {
+  color: var(--mb-cream) !important;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movebuddy .mb-part-head,
+.movebuddy .mb-section-header {
+  display: block;
+  text-align: left;
+}
+
+.movebuddy .mb-part-head h2,
+.movebuddy .mb-part-head h3,
+.movebuddy .mb-section-header h2,
+.movebuddy .mb-section-header h3,
+.movebuddy .mb-card > h2,
+.movebuddy .mb-card > h3,
+.movebuddy .mb-card > h4,
+.move-tracker-page .move-tracker-card h2,
+.move-tracker-page .move-tracker-card h3,
+.move-tracker-page .move-tracker-card h4 {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin: 0 0 12px;
+  text-align: left;
+  align-self: auto;
+}
+
+.move-tracker-page .move-tracker-header h1 {
+  color: #7a1f2b;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
 }

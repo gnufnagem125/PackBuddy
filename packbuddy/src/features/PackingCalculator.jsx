@@ -49,9 +49,15 @@ export default function PackingCalculator() {
      const product = await response.json();
 
 
-     if (!product.name || !Number.isFinite(Number(product.weightKg))) {
-       throw new Error("No reliable product weight was found");
-     }
+    if (
+  typeof product.name !== 'string' ||
+  !product.name.trim() ||
+  typeof product.weightKg !== 'number' ||
+  !Number.isFinite(product.weightKg) ||
+  product.weightKg <= 0
+) {
+  throw new Error('No reliable product weight was found')
+}
 
 
      setItems((previous) => [
@@ -69,10 +75,14 @@ export default function PackingCalculator() {
        `Identified ${product.name}. Check the weight before adding it to your final total.`
      );
    } catch (error) {
-     setMessage(
-       "We couldn't verify this item's weight. Please try another photo or enter the details manually."
-     );
-   } finally {
+  console.error("Photo scanning failed:", error);
+
+  setMessage(
+    `Photo scanning failed: ${
+      error instanceof Error ? error.message : String(error)
+    }`
+  );
+} finally {
      setScanning(false);
      event.target.value = "";
    }
@@ -156,12 +166,15 @@ export default function PackingCalculator() {
      </button>
 
 
-     <h1>Packing Calculator</h1>
-     <p className="subtitle">
-       Scan your belongings and check your luggage weight.
-     </p>
+     <header className="packing-hero">
+       <span className="packing-eyebrow">PACK SMARTER</span>
+       <h1>Packing <span>Calculator</span></h1>
+       <p className="subtitle">
+         Scan your belongings and check your luggage weight.
+       </p>
+     </header>
 
-
+     <div className="packing-card">
      {/* Suitcase weight allowance bubble */}
      <section className="allowance-bubble">
        <label htmlFor="allowance">
@@ -355,6 +368,7 @@ export default function PackingCalculator() {
          )}
        </section>
      )}
+     </div>
    </main>
  );
 }

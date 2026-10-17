@@ -344,11 +344,6 @@ Rules:
   }
 })
 
-app.listen(PORT, () => {
-  console.log(`PackBuddy backend running at http://localhost:${PORT}`)
-})
-
-
 app.post(
   '/api/identify-product',
   upload.single('image'),
@@ -431,4 +426,9 @@ If you cannot estimate the weight reliably, use:
     }
   }
 )
+
+// Register every route before opening the port to incoming requests.
+app.listen(PORT, () => {
+  console.log(`PackBuddy backend running at http://127.0.0.1:${PORT}`)
+})
 
