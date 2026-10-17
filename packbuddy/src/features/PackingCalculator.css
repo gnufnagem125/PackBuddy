@@ -1,0 +1,144 @@
+
+.packing-calculator .allowance-panel {
+  margin: 28px 0 20px;
+  padding: 22px;
+  background: #eef5ff;
+  border: 1px solid #d4e4fb;
+  border-radius: 22px;
+}
+
+.allowance-panel label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.allowance-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.allowance-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #ccd8e8;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.scan-button,
+.add-item-button,
+.calculate-weight-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin: 14px 0;
+  border: 0;
+  border-radius: 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.scan-button {
+  background: #d9f2e7;
+  color: #205b47;
+  border-radius: 30px;
+  padding: 18px;
+}
+
+.add-item-button {
+  background: #f0edff;
+  color: #5140a0;
+}
+
+.calculate-weight-button {
+  background: #3456a1;
+  color: white;
+}
+
+.packing-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(75px, 1fr) 48px;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e3e8ef;
+}
+
+.packing-header {
+  font-weight: 700;
+  background: #f4f6fa;
+}
+
+.packing-row input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 6px;
+  border: 1px solid #d5deea;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.remove-item {
+  border: 0;
+  background: #fff0f0;
+  color: #a52828;
+  padding: 9px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.empty-packing-list {
+  padding: 24px 12px;
+  text-align: center;
+  color: #718096;
+}
+
+.empty-packing-list span {
+  font-size: 32px;
+}
+
+.packing-message,
+.scan-status {
+  margin: 14px 0;
+  text-align: center;
+  color: #536579;
+}
+
+.product-source {
+  grid-column: 1 / -1;
+  font-size: 14px;
+}
+
+.packing-result {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 18px;
+}
+
+.packing-within-limit {
+  background: #e5f7ed;
+  border: 1px solid #b8e6ca;
+}
+
+.packing-over-limit {
+  background: #fff0ed;
+  border: 1px solid #ffc7bd;
+}
+
+.packing-calculator button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (max-width: 480px) {
+  .packing-row {
+    grid-template-columns: minmax(0, 1.5fr) minmax(70px, 1fr) 32px;
+    gap: 5px;
+    font-size: 13px;
+  }
+}
