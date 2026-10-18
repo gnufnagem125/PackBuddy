@@ -2,7 +2,7 @@ import './App.css'
 
 import { Routes, Route, Link } from 'react-router-dom'
 import PackingCalculator from './features/PackingCalculator'
-import DormRoomFit from './features/DormRoomFit'
+import RoomCalculator from './features/room-calculator/RoomCalculator'
 import PackOrBuy from './features/PackOrBuy'
 import TransportPlanner from './features/TransportPlanner'
 import MoveTracker from './features/MoveTracker'
@@ -147,7 +147,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/packingcalculator" element={<PackingCalculator />} />
-        <Route path="/dorm-fit" element={<DormRoomFit />} />
+        <Route path="/dorm-fit" element={<RoomCalculator />} />
         <Route path="/pack-or-buy" element={<PackOrBuy />} />
         <Route path="/transport" element={<TransportPlanner />} />
         <Route path="/move-tracker" element={<MoveTracker />} />

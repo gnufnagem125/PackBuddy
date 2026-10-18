@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.room-calculator {
+  --room-red: #7a1f2b;
+  --room-red-dark: #561520;
+  --room-red-soft: #f2dfe0;
+  --room-beige: #f4ebdd;
+  --room-beige-deep: #e8d9c2;
+  --room-cream: #fffaf2;
+  --room-ink: #2b1d1a;
+  --room-muted: #6e5d55;
+  --room-green: #2f6b3f;
+  --room-green-soft: #e1efe4;
+  --room-amber: #a86a12;
+  --room-amber-soft: #f6ead2;
+  --room-radius: 18px;
+
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 1px 0 50px;
+  background: var(--room-beige);
+  color: var(--room-ink);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+.room-calculator,
+.room-calculator *,
+.room-calculator *::before,
+.room-calculator *::after { box-sizing: border-box; }
+
+.room-calculator h1,
+.room-calculator h2,
+.room-calculator h3,
+.room-calculator h4,
+.room-calculator p { margin-top: 0; }
+
+.room-calculator h1,
+.room-calculator h2,
+.room-calculator h3,
+.room-calculator h4 {
+  color: var(--room-red-dark);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.25;
+}
+
+/* Small brand strip above the red hero */
+.room-calculator .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: min(1240px, calc(100% - 40px));
+  margin: 18px auto;
+  padding: 14px 20px;
+  border: 1px solid var(--room-beige-deep);
+  border-radius: 16px;
+  background: var(--room-cream);
+  box-shadow: 0 5px 18px rgba(43, 29, 26, .05);
+}
+
+.room-calculator .brand { display: flex; align-items: center; gap: 12px; }
+.room-calculator .brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  background: var(--room-red);
+  color: var(--room-cream);
+  font-size: 21px;
+  font-weight: 700;
+}
+.room-calculator .brand h1 { margin: 0; color: var(--room-red-dark); font-size: 31px; line-height: 1.15; letter-spacing: -.8px; }
+.room-calculator .brand p { margin: 2px 0 0; color: var(--room-muted); font-size: 11px; }
+
+/* PackBuddy-style full-width burgundy banner */
+.room-calculator .intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, .72fr) minmax(150px, .42fr);
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  margin: 0;
+  padding: 56px max(24px, calc((100vw - 1240px) / 2));
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(155deg, var(--room-red), var(--room-red-dark));
+  color: var(--room-cream);
+}
+.room-calculator .intro > div:first-child { min-width: 0; }
+.room-calculator .eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #f0d5d2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.room-calculator .intro h2 {
+  max-width: 600px;
+  margin: 0 0 12px;
+  color: var(--room-cream);
+  font-size: clamp(29px, 4vw, 46px);
+  letter-spacing: -1.2px;
+}
+.room-calculator .intro p { color: var(--room-cream); opacity: .92; }
+.room-calculator .intro > div:first-child > p { max-width: 560px; font-size: 13px; }
+
+.room-calculator .hero-room-illustration {
+  position: relative;
+  width: min(100%, 430px);
+  min-height: 175px;
+  margin-top: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 250, 242, .45);
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #f5e8de 0 70%, #e7d5c1 70% 100%);
+  color: var(--room-red);
+}
+.room-calculator .illustration-window { position: absolute; top: 15px; left: 12%; display: flex; width: 65px; height: 54px; overflow: hidden; border: 5px solid var(--room-cream); border-radius: 6px; background: #d6e1dc; }
+.room-calculator .illustration-window span { flex: 1; border-right: 2px solid white; background: linear-gradient(150deg, #dbe7df, #b8d0c9); }
+.room-calculator .illustration-picture { position: absolute; top: 20px; right: 15%; display: grid; place-items: center; width: 35px; height: 40px; border: 5px solid var(--room-cream); border-radius: 4px; background: #dfc7ad; font-size: 19px; }
+.room-calculator .illustration-bed { position: absolute; bottom: 31px; left: 13%; width: 48%; height: 61px; border: 5px solid var(--room-cream); border-radius: 10px 10px 4px 4px; background: #b9868d; box-shadow: 0 6px 0 #d4b89f; }
+.room-calculator .illustration-pillow { position: absolute; top: 5px; left: 7px; width: 30%; height: 20px; border-radius: 6px; background: #fff8ed; }
+.room-calculator .illustration-duvet { position: absolute; right: 5px; bottom: 5px; left: 7px; height: 30px; border-radius: 5px; background: #e8d7d0; }
+.room-calculator .illustration-desk { position: absolute; right: 9%; bottom: 31px; width: 22%; height: 10px; border-radius: 4px; background: #a77d61; box-shadow: 0 7px 0 -3px #8e6756, 0 21px 0 -4px #8e6756; }
+.room-calculator .illustration-lamp { position: absolute; bottom: 8px; left: 8px; color: #c09a54; font-size: 20px; }
+.room-calculator .illustration-book { position: absolute; right: 4px; bottom: 4px; width: 15px; height: 5px; border-radius: 2px; background: var(--room-red); }
+.room-calculator .illustration-plant { position: absolute; right: 3%; bottom: 38px; color: #6c8060; font-size: 27px; }
+.room-calculator .illustration-sparkle { position: absolute; z-index: 1; color: #b48b4e; }
+.room-calculator .sparkle-one { top: 10px; right: 38%; }
+.room-calculator .sparkle-two { top: 70px; right: 7%; }
+.room-calculator .illustration-caption { position: absolute; bottom: 7px; left: 12px; color: #6f514d; font-size: 9px; font-weight: 600; }
+
+/* Room selectors sit in a light card inside the banner */
+.room-calculator .control-group {
+  min-width: 0;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--room-beige-deep);
+  border-radius: 16px;
+  background: var(--room-cream);
+  color: var(--room-ink);
+}
+.room-calculator .control-group .control-group { margin-top: 13px; padding: 0; border: 0; background: transparent; }
+.room-calculator label { display: block; margin-bottom: 6px; color: var(--room-red-dark); font-size: 11px; font-weight: 600; }
+.room-calculator input,
+.room-calculator select {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 1px solid var(--room-beige-deep);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--room-ink);
+  font: 400 12px 'Poppins', sans-serif;
+}
+.room-calculator input:focus,
+.room-calculator select:focus { border-color: var(--room-red); outline: 3px solid rgba(122, 31, 43, .12); }
+.room-calculator .control-group > p { margin: 12px 0 0; color: var(--room-muted); font-size: 11px; }
+.room-calculator .room-size { padding: 17px; border: 1px solid rgba(255, 250, 242, .3); border-radius: 16px; background: rgba(255, 250, 242, .12); color: var(--room-cream); }
+.room-calculator .room-size span,
+.room-calculator .room-size small { display: block; color: #f0dfe3; font-size: 10px; }
+.room-calculator .room-size strong { display: block; margin: 6px 0; color: var(--room-cream); font-size: 25px; }
+
+/* Main feature sections */
+.room-calculator .accommodation-section,
+.room-calculator .dashboard {
+  width: min(1240px, calc(100% - 40px));
+  margin: 30px auto 0;
+}
+.room-calculator .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 15px; }
+.room-calculator .section-heading .eyebrow { color: var(--room-red); }
+.room-calculator .section-heading h3 { margin: 0; color: var(--room-red-dark); font-size: 23px; letter-spacing: -.5px; }
+.room-calculator .section-heading p { margin: 5px 0 0; color: var(--room-muted); font-size: 12px; }
+.room-calculator .section-decoration { color: var(--room-red); font-size: 32px; }
+.room-calculator .accommodation-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.room-calculator .accommodation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--room-beige-deep);
+  border-radius: 16px;
+  background: var(--room-cream);
+  color: var(--room-ink);
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(43, 29, 26, .04);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.room-calculator .accommodation-card:hover { transform: translateY(-2px); border-color: var(--room-red); box-shadow: 0 9px 22px rgba(86, 21, 32, .1); }
+.room-calculator .accommodation-card.active { border: 2px solid var(--room-red); padding: 11px; background: #f8eeee; }
+.room-calculator .accommodation-art { position: relative; display: grid; place-items: center; min-height: 90px; margin-bottom: 10px; overflow: hidden; border-radius: 12px; background: linear-gradient(145deg, #f2e6d8, #e7d5c3); }
+.room-calculator .accommodation-icon { font-size: 40px; }
+.room-calculator .art-sparkle { position: absolute; top: 8px; right: 11px; color: var(--room-red); }
+.room-calculator .accommodation-card-title { color: var(--room-red-dark); font-size: 13px; font-weight: 700; }
+.room-calculator .accommodation-card-caption { margin-top: 4px; color: var(--room-muted); font-size: 10px; }
+.room-calculator .accommodation-card-action { margin-top: 10px; color: var(--room-red); font-size: 10px; font-weight: 700; }
+
+.room-calculator .dashboard { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(270px, .8fr); align-items: start; gap: 18px; }
+.room-calculator .workspace,
+.room-calculator .side-card { min-width: 0; border: 1px solid var(--room-beige-deep); border-radius: var(--room-radius); background: var(--room-cream); box-shadow: 0 7px 24px rgba(43, 29, 26, .055); }
+.room-calculator .workspace { padding: 20px; }
+.room-calculator .side-card { margin-bottom: 14px; padding: 18px; }
+.room-calculator .panel-heading,
+.room-calculator .side-title { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.room-calculator .panel-heading h3,
+.room-calculator .side-title h3 { margin: 0; color: var(--room-red-dark); font-size: 17px; }
+.room-calculator .panel-heading p,
+.room-calculator .side-title p { margin: 5px 0 0; color: var(--room-muted); font-size: 11px; }
+.room-calculator .toggle-label { display: flex; align-items: center; gap: 7px; margin: 0; color: var(--room-red); font-size: 11px; }
+.room-calculator .toggle-label input { width: 16px; min-height: 16px; margin: 0; accent-color: var(--room-red); }
+.room-calculator .dimension-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin-top: 12px; }
+.room-calculator button { font-family: 'Poppins', sans-serif; }
+.room-calculator .primary-button,
+.room-calculator .secondary-button,
+.room-calculator .delete-button,
+.room-calculator .movement-pad button {
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.room-calculator .primary-button { border: 1px solid var(--room-red); background: var(--room-red); color: var(--room-cream); }
+.room-calculator .primary-button:hover { background: var(--room-red-dark); color: var(--room-cream); }
+.room-calculator .secondary-button { border: 1px solid var(--room-beige-deep); background: var(--room-beige); color: var(--room-red); }
+.room-calculator .secondary-button:hover { background: var(--room-red-soft); color: var(--room-red-dark); }
+.room-calculator .delete-button { border: 1px solid #e7c9c9; background: #fff2ef; color: #984b4b; }
+.room-calculator .delete-button:hover { background: #984b4b; color: white; }
+.room-calculator .full-button { width: 100%; margin-top: 11px; }
+.room-calculator button:disabled { cursor: not-allowed; opacity: .45; }
+
+.room-calculator .scene-container { height: min(56vw, 520px); min-height: 320px; margin-top: 14px; overflow: hidden; border: 1px solid var(--room-beige-deep); border-radius: 14px; background: #f4ebdd; }
+.room-calculator .scene-container canvas { display: block; width: 100% !important; height: 100% !important; touch-action: none; }
+.room-calculator .legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 13px; color: var(--room-muted); font-size: 10px; }
+.room-calculator .dot { display: inline-block; width: 9px; height: 9px; margin-right: 5px; border-radius: 50%; }
+.room-calculator .dot.free { background: #b7c9a9; }
+.room-calculator .dot.occupied { background: #b9868d; }
+.room-calculator .dot.overlap { background: #d9826b; }
+.room-calculator .stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 15px; }
+.room-calculator .stat-card { min-width: 0; padding: 13px; border: 1px solid var(--room-beige-deep); border-radius: 12px; background: var(--room-beige); }
+.room-calculator .stat-card span { display: block; color: var(--room-muted); font-size: 10px; }
+.room-calculator .stat-card strong { display: block; margin-top: 5px; color: var(--room-red); font-size: clamp(15px, 2vw, 21px); }
+.room-calculator .fine-print { margin: 14px 0 0; color: var(--room-muted); font-size: 10px; }
+.room-calculator .item-preview { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; padding: 12px; border: 1px dashed var(--room-beige-deep); border-radius: 11px; background: #f9f3e9; color: var(--room-red-dark); font-size: 11px; font-weight: 600; }
+.room-calculator .item-preview small { color: var(--room-muted); font-size: 10px; }
+.room-calculator .movement-pad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; max-width: 190px; margin: 16px auto; }
+.room-calculator .movement-pad button { min-height: 40px; padding: 7px; border: 1px solid var(--room-beige-deep); background: var(--room-beige); color: var(--room-red); }
+.room-calculator .movement-pad button:hover:not(:disabled) { background: var(--room-red); color: var(--room-cream); }
+.room-calculator .coordinates { display: flex; justify-content: space-between; gap: 10px; margin-top: 10px; color: var(--room-muted); font-size: 10px; }
+.room-calculator .inventory-list { display: flex; flex-direction: column; gap: 7px; margin-top: 13px; }
+.room-calculator .inventory-item { display: flex; align-items: center; gap: 9px; width: 100%; min-width: 0; padding: 10px; border: 1px solid var(--room-beige-deep); border-radius: 11px; background: #fffdf9; color: var(--room-ink); text-align: left; }
+.room-calculator .inventory-item:hover,
+.room-calculator .inventory-item.selected { border-color: #c69ca8; background: #f7edef; color: var(--room-ink); }
+.room-calculator .inventory-swatch { width: 12px; height: 32px; flex: 0 0 auto; border-radius: 5px; }
+.room-calculator .inventory-name { display: flex; flex: 1; flex-direction: column; min-width: 0; gap: 3px; }
+.room-calculator .inventory-name strong { overflow-wrap: anywhere; color: var(--room-red-dark); font-size: 10px; }
+.room-calculator .inventory-name small { color: var(--room-muted); font-size: 9px; }
+.room-calculator .status { flex: 0 0 auto; padding: 4px 7px; border-radius: 20px; font-size: 9px; font-weight: 600; }
+.room-calculator .status-ok { background: var(--room-green-soft); color: var(--room-green); }
+.room-calculator .status-warning { background: var(--room-amber-soft); color: var(--room-amber); }
+.room-calculator .footer { width: min(1240px, calc(100% - 40px)); margin: 24px auto 0; padding: 14px 0; color: var(--room-muted); font-size: 11px; text-align: center; }
+
+.room-calculator :focus-visible { outline: 3px solid rgba(122, 31, 43, .25); outline-offset: 2px; }
+
+@media (max-width: 1000px) {
+  .room-calculator .intro { grid-template-columns: minmax(0, 1.2fr) minmax(230px, .8fr); }
+  .room-calculator .room-size { grid-column: 2; }
+  .room-calculator .dashboard { grid-template-columns: minmax(0, 1.25fr) minmax(250px, .8fr); }
+}
+
+@media (max-width: 760px) {
+  .room-calculator .intro { grid-template-columns: 1fr; padding: 42px 22px; }
+  .room-calculator .control-group,
+  .room-calculator .room-size { width: 100%; max-width: 560px; }
+  .room-calculator .room-size { grid-column: auto; }
+  .room-calculator .dashboard { grid-template-columns: 1fr; }
+  .room-calculator .accommodation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  .room-calculator .topbar { width: calc(100% - 24px); padding: 11px 12px; }
+  .room-calculator .brand-mark { width: 38px; height: 38px; }
+  .room-calculator .brand h1 { font-size: 24px; }
+  .room-calculator .topbar > .secondary-button { padding: 8px 11px; }
+  .room-calculator .accommodation-section,
+  .room-calculator .dashboard { width: calc(100% - 24px); margin-top: 22px; }
+  .room-calculator .accommodation-grid { gap: 9px; }
+  .room-calculator .accommodation-card { padding: 9px; }
+  .room-calculator .accommodation-card.active { padding: 8px; }
+  .room-calculator .accommodation-art { min-height: 72px; }
+  .room-calculator .accommodation-icon { font-size: 32px; }
+  .room-calculator .workspace,
+  .room-calculator .side-card { padding: 14px; }
+  .room-calculator .dimension-grid { grid-template-columns: 1fr; }
+  .room-calculator .scene-container { height: 350px; min-height: 300px; }
+  .room-calculator .stats-grid { grid-template-columns: 1fr; }
+  .room-calculator .stat-card { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .room-calculator .stat-card strong { margin-top: 0; text-align: right; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .room-calculator *,
+  .room-calculator *::before,
+  .room-calculator *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
